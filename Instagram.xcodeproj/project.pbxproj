@@ -13,6 +13,11 @@
 		B08312CD25EE6BA100435138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B08312CB25EE6BA100435138 /* Main.storyboard */; };
 		B08312CF25EE6BA400435138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B08312CE25EE6BA400435138 /* Assets.xcassets */; };
 		B08312D225EE6BA400435138 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B08312D025EE6BA400435138 /* LaunchScreen.storyboard */; };
+		B0CAB4DD25EE85830066B73D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CAB4DC25EE85830066B73D /* LoginViewController.swift */; };
+		B0CAB4E025EE85A10066B73D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CAB4DF25EE85A10066B73D /* HomeViewController.swift */; };
+		B0CAB4E325EE85B00066B73D /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CAB4E225EE85B00066B73D /* ImageSelectViewController.swift */; };
+		B0CAB4E625EE85C70066B73D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CAB4E525EE85C70066B73D /* PostViewController.swift */; };
+		B0CAB4E925EE85D60066B73D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CAB4E825EE85D60066B73D /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		B08312CE25EE6BA400435138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B08312D125EE6BA400435138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B08312D325EE6BA400435138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0CAB4DC25EE85830066B73D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B0CAB4DF25EE85A10066B73D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B0CAB4E225EE85B00066B73D /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
+		B0CAB4E525EE85C70066B73D /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		B0CAB4E825EE85D60066B73D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,11 @@
 				B08312C525EE6BA100435138 /* AppDelegate.swift */,
 				B08312C725EE6BA100435138 /* SceneDelegate.swift */,
 				B08312C925EE6BA100435138 /* ViewController.swift */,
+				B0CAB4DC25EE85830066B73D /* LoginViewController.swift */,
+				B0CAB4DF25EE85A10066B73D /* HomeViewController.swift */,
+				B0CAB4E225EE85B00066B73D /* ImageSelectViewController.swift */,
+				B0CAB4E525EE85C70066B73D /* PostViewController.swift */,
+				B0CAB4E825EE85D60066B73D /* SettingViewController.swift */,
 				B08312CB25EE6BA100435138 /* Main.storyboard */,
 				B08312CE25EE6BA400435138 /* Assets.xcassets */,
 				B08312D025EE6BA400435138 /* LaunchScreen.storyboard */,
@@ -137,6 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0CAB4E325EE85B00066B73D /* ImageSelectViewController.swift in Sources */,
+				B0CAB4E025EE85A10066B73D /* HomeViewController.swift in Sources */,
+				B0CAB4E625EE85C70066B73D /* PostViewController.swift in Sources */,
+				B0CAB4E925EE85D60066B73D /* SettingViewController.swift in Sources */,
+				B0CAB4DD25EE85830066B73D /* LoginViewController.swift in Sources */,
 				B08312CA25EE6BA100435138 /* ViewController.swift in Sources */,
 				B08312C625EE6BA100435138 /* AppDelegate.swift in Sources */,
 				B08312C825EE6BA100435138 /* SceneDelegate.swift in Sources */,
