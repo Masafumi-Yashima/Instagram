@@ -17,6 +17,7 @@
 		B0CAB4E325EE85B00066B73D /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CAB4E225EE85B00066B73D /* ImageSelectViewController.swift */; };
 		B0CAB4E625EE85C70066B73D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CAB4E525EE85C70066B73D /* PostViewController.swift */; };
 		B0CAB4E925EE85D60066B73D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CAB4E825EE85D60066B73D /* SettingViewController.swift */; };
+		B0CAB4EC25EE8D3E0066B73D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CAB4EB25EE8D3E0066B73D /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B0CAB4E225EE85B00066B73D /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
 		B0CAB4E525EE85C70066B73D /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		B0CAB4E825EE85D60066B73D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B0CAB4EB25EE8D3E0066B73D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				B08312C525EE6BA100435138 /* AppDelegate.swift */,
 				B08312C725EE6BA100435138 /* SceneDelegate.swift */,
+				B0CAB4EB25EE8D3E0066B73D /* TabBarController.swift */,
 				B0CAB4DC25EE85830066B73D /* LoginViewController.swift */,
 				B0CAB4DF25EE85A10066B73D /* HomeViewController.swift */,
 				B0CAB4E225EE85B00066B73D /* ImageSelectViewController.swift */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0CAB4E325EE85B00066B73D /* ImageSelectViewController.swift in Sources */,
+				B0CAB4EC25EE8D3E0066B73D /* TabBarController.swift in Sources */,
 				B0CAB4E025EE85A10066B73D /* HomeViewController.swift in Sources */,
 				B0CAB4E625EE85C70066B73D /* PostViewController.swift in Sources */,
 				B0CAB4E925EE85D60066B73D /* SettingViewController.swift in Sources */,
