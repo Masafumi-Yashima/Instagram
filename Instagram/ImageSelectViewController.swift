@@ -34,6 +34,21 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
         self.dismiss(animated: true, completion: nil)
     }
     
+    //写真を撮影・選択した時に呼ばれるメソッド
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if info[.originalImage] != nil {
+            //撮影・選択された画像を取得する
+            let image = info[.originalImage] as! UIImage
+            
+            //あとでCLImageEditorライブラリで加工する
+            print("DEBUG_PRINT: image = \(image)")
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        //ImageSelectViewController画面を閉じてタブ画面に戻る
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
