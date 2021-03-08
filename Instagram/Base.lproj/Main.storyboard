@@ -153,9 +153,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="投稿" image="camera" id="CYM-Yn-PGZ"/>
-                    <connections>
-                        <outlet property="handleLibraryButton" destination="ZZG-rV-P1O" id="laK-cG-XLm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fzx-n2-dcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -227,7 +224,6 @@
                     <tabBarItem key="tabBarItem" title="設定" image="setting" id="ZMP-xz-GOj"/>
                     <connections>
                         <outlet property="displayNameTextField" destination="J1Y-kS-9nh" id="HxM-2i-W4d"/>
-                        <outlet property="handleChangeButton" destination="W6S-dc-2WC" id="gZQ-jc-9WP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6n-7q-Doe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
