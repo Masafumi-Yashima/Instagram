@@ -21,6 +21,7 @@ class PostData: NSObject {
         
         let postDic = document.data()
         
+        //Any型をString型にダウンキャストする
         self.name = postDic["name"] as? String
         
         self.caption = postDic["caption"] as? String
