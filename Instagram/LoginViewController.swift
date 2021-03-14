@@ -17,8 +17,9 @@ class LoginViewController: UIViewController {
     
     //ログインボタンをタップした時に呼ばれるメソッド
     @IBAction func handleLoginButton(_ sender: Any) {
+        //adress,passwardがnil（何もない）でなかったらaddress,passwardを格納する（String型の器を作る）
         if let address = mailAdressTextField.text, let passward = passwordTextField.text {
-            //アドレスとパスワードいずれかでも入力されていない場合何もしない
+            //アドレスとパスワードいずれかでも入力されていない（String型の器が空なら）場合何もしない
             if address.isEmpty || passward.isEmpty {
                 SVProgressHUD.showError(withStatus: "必須項目を入力してください")
                 return

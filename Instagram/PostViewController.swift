@@ -25,6 +25,7 @@ class PostViewController: UIViewController {
         //HUDで投稿処理中の表示を開始
         SVProgressHUD.show()
         //Storageに画像をアップロードする
+        //メタデータにはname,size,contentTypeなどやあまり一般的でないcontentDisposition,timeCreatedなども含まれる.
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         imageRef.putData(imageData!, metadata: metadata) { (metadata,error) in
@@ -32,7 +33,7 @@ class PostViewController: UIViewController {
                 //画像のアップロード失敗
                 print(error!)
                 SVProgressHUD.showError(withStatus: "画像のアップロードが失敗しました")
-                //投稿処理をキャンセルし、戦闘画面に戻る
+                //投稿処理をキャンセルし、先頭画面に戻る
                 UIApplication.shared.windows.first{ $0 .isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
                 return
             }
@@ -53,6 +54,8 @@ class PostViewController: UIViewController {
     
     //キャンセルボタンをタップした時に呼ばれるメソッド
     @IBAction func handleCancelButton(_ sender: Any) {
+        //加工画面に戻る
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

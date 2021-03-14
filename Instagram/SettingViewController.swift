@@ -14,6 +14,7 @@ class SettingViewController: UIViewController {
     
     //表示名変更ボタンをタップした時に呼ばれるメソッド
     @IBAction func handleChangeButton(_ sender: Any) {
+        //displayNameTextField.textがnilでなかったらdisplayNameというStringの器を作る
         if let displayName = displayNameTextField.text {
             
             //表示名が入力されていない時はHUDを出して何もしない
@@ -47,6 +48,7 @@ class SettingViewController: UIViewController {
     //ログアウトボタンをタップした時に呼ばれるメソッド
     @IBAction func handleLogoutButton(_ sender: Any) {
         //ログアウトする
+        //try!例外を強制的に無視する（が発生したらクラッシュ）
         try! Auth.auth().signOut()
         
         //ログイン画面を表示する

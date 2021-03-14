@@ -6,6 +6,9 @@
 //
 
 import UIKit
+//Firebase:リアルタイムにデータを同期する必要があるサービスに適しているサービス
+//サーバーに対してデータを読み書きできる
+//アカウントを管理する機能を持つ
 import Firebase
 
 class TabBarController: UITabBarController,UITabBarControllerDelegate {
@@ -23,19 +26,24 @@ class TabBarController: UITabBarController,UITabBarControllerDelegate {
     }
     
     //タブバーのアイコンがタップされた時に呼ばれるdelegateメソッドを処理する
+    //指定されたtabBarControllerをアクティブにする必要があるかどうか
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        //viewControllerがImageSelectViewControllerならモーダル遷移
         if viewController is ImageSelectViewController {
             //ImageSelectViewControllerはタブ切り替えではなくモーダル画面遷移する
             let imageSelectViewController = storyboard!.instantiateViewController(withIdentifier: "ImageSelect")
+            //ViewControllerをモーダルに表示する
             present(imageSelectViewController, animated: true)
+            //現在のタブをアクティブのままにする場合
             return false
         } else {
             //その他のViewControllerは通常のタブ切り替えを実施
+            //return true ビューコントローラのタブを選択する必要がある場合
             return true
         }
     }
     
-    //TabBarControllerを開いた時の処理
+    //TabBarControllerが表示された時の処理
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

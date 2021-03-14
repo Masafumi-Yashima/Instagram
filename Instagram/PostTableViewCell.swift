@@ -29,6 +29,7 @@ class PostTableViewCell: UITableViewCell {
     //PostDataの内容をセルに表示
     func setPostData(_ postData: PostData) {
         //画像の表示
+        //インジケーター：グレーのくるくる回るアイコン
         postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postData.id+".jpg")
         postImageView.sd_setImage(with: imageRef)
