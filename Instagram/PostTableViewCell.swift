@@ -52,7 +52,7 @@ class PostTableViewCell: UITableViewCell {
         
         //いいねボタンの表示
         if postData.isLiked {
-            let buttonImage = UIImage(named: "like_exsist")
+            let buttonImage = UIImage(named: "like_exist")
             self.likeButton.setImage(buttonImage, for: .normal)
         } else {
             let buttonImage = UIImage(named: "like_none")
