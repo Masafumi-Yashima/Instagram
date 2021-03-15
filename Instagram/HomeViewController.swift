@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
     //投稿データを格納する配列
     var postArray: [PostData] = []
     
-    //Firestoreのリスナー
+    //Firestoreのデータ更新の監視を行うためのリスナー
     var listener: ListenerRegistration?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,19 +41,24 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         // Do any additional setup after loading the view.
     }
     
+    //投稿データを読み込む
+    //Firestoreからデータを取得すると、QueryDocumentSnapshotクラスのデータが渡される
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("DEBUG_PRINT: viewVillAppear")
-        //ログイン済みか確認
+        //ログイン済みか確認（ログインしていれば）
         if Auth.auth().currentUser != nil {
-            //listenerを登録して投稿データの更新を監視する
+            //listenerを登録して投稿データの更新を監視する（参照場所と日付順にソート）（デフォルトではドキュメントIDの昇順で取得）（orderで並び替え,descending=trueで降順に）
             let postRef = Firestore.firestore().collection(Const.PostPath).order(by: "date", descending: true)
-            listener = postRef.addSnapshotListener() { (querySnapshot, error) in
+            //addSnapshotListenerのクロージャーは投稿データが追加・更新されるたびに呼び出される
+            //querySnapshotに最新のデータが入っている
+            listener = postRef.addSnapshotListener { (querySnapshot, error) in
                 if let error = error {
                     print("DEBUG_PRINT: snapshotの取得が失敗しました。\(error)")
                     return
                 }
                 //取得したdocumentを元にPostDataを作成して、postArrayの配列にする
+                //mapは配列内の要素に処理を適用し、その処理を施した配列を使いたい場合に使用する
                 self.postArray = querySnapshot!.documents.map { document in
                     print("DEBUG_PRINT: document取得\(document.documentID)")
                     let postData = PostData(document: document)
