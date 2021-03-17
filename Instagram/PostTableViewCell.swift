@@ -15,6 +15,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentsButton: UIButton!
+    @IBOutlet weak var commentTextField: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class PostTableViewCell: UITableViewCell {
     
     //PostDataの内容をセルに表示
     func setPostData(_ postData: PostData) {
+        commentTextField.text = "こんにちは記入しました"
         //画像の表示
         //インジケーター：グレーのくるくる回るアイコン
         postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray

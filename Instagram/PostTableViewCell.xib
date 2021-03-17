@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -40,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3X-wC-xBt">
-                        <rect key="frame" x="30" y="425" width="295" height="171"/>
+                        <rect key="frame" x="30" y="425" width="295" height="41"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -59,17 +60,31 @@
                         </constraints>
                         <state key="normal" backgroundImage="comment"/>
                     </button>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="TextView" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="agz-ma-HEL">
+                        <rect key="frame" x="30" y="476" width="295" height="120"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="5uf-jG-evb"/>
+                        </constraints>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="q6N-B9-oyg" firstAttribute="centerY" secondItem="VEl-1Q-Vf6" secondAttribute="centerY" id="3Mf-Wf-nUV"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="d3X-wC-xBt" secondAttribute="bottom" constant="10" id="7NZ-H9-l0e"/>
+                    <constraint firstItem="agz-ma-HEL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="6ST-73-2Sr"/>
                     <constraint firstAttribute="trailingMargin" secondItem="laB-f5-4nR" secondAttribute="trailing" constant="10" id="7TV-s2-yvz"/>
                     <constraint firstItem="laB-f5-4nR" firstAttribute="centerY" secondItem="VEl-1Q-Vf6" secondAttribute="centerY" id="BZw-fV-f0h"/>
+                    <constraint firstItem="agz-ma-HEL" firstAttribute="top" secondItem="d3X-wC-xBt" secondAttribute="bottom" constant="10" id="CZq-1h-HjX"/>
                     <constraint firstItem="d3X-wC-xBt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Cjg-At-VgZ"/>
                     <constraint firstItem="VEl-1Q-Vf6" firstAttribute="top" secondItem="m2I-oG-f64" secondAttribute="bottom" constant="10" id="Egp-sZ-l3v"/>
                     <constraint firstItem="m2I-oG-f64" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Hr3-ov-ug9"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="agz-ma-HEL" secondAttribute="bottom" constant="10" id="MSN-X0-Z1Z"/>
                     <constraint firstItem="1KY-xn-Xkp" firstAttribute="centerY" secondItem="VEl-1Q-Vf6" secondAttribute="centerY" id="OWs-bp-d5B"/>
+                    <constraint firstItem="agz-ma-HEL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="RT7-FU-0yf"/>
                     <constraint firstItem="1KY-xn-Xkp" firstAttribute="centerY" secondItem="VEl-1Q-Vf6" secondAttribute="centerY" id="Wai-Zq-rA6"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="agz-ma-HEL" secondAttribute="trailing" constant="10" id="cVl-pE-ObT"/>
                     <constraint firstItem="laB-f5-4nR" firstAttribute="leading" secondItem="q6N-B9-oyg" secondAttribute="trailing" constant="10" id="dKe-hB-K7r"/>
                     <constraint firstItem="q6N-B9-oyg" firstAttribute="leading" secondItem="1KY-xn-Xkp" secondAttribute="trailing" constant="10" id="jKm-gh-Hpo"/>
                     <constraint firstItem="d3X-wC-xBt" firstAttribute="top" secondItem="VEl-1Q-Vf6" secondAttribute="bottom" constant="10" id="nxl-RV-7m0"/>
@@ -83,6 +98,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="d3X-wC-xBt" id="DUi-ie-e45"/>
+                <outlet property="commentTextField" destination="agz-ma-HEL" id="BsD-8k-7nN"/>
                 <outlet property="commentsButton" destination="q6N-B9-oyg" id="zqr-1n-Xdh"/>
                 <outlet property="dateLabel" destination="laB-f5-4nR" id="DaD-yD-vAe"/>
                 <outlet property="likeButton" destination="VEl-1Q-Vf6" id="IOi-F6-rFP"/>
@@ -95,5 +111,11 @@
     <resources>
         <image name="comment" width="40" height="40"/>
         <image name="like_none" width="40" height="40"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

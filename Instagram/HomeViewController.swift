@@ -45,6 +45,11 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
         
+        //TableViewの行の高さをAutoLayoutで自動調整する
+//        tableView.rowHeight = UITableView.automaticDimension
+        //TableViewの概算値
+//        tableView.estimatedRowHeight = 200
+        
         // Do any additional setup after loading the view.
     }
     
@@ -100,6 +105,9 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         //likesを更新する
         if let myid = Auth.auth().currentUser?.uid {
             //更新データを作成する
+            //FieldValue:配列内の要素を更新する
+            //arrayRemoveで指定した各要素の全てを削除する
+            //arrayUnionで要素を配列に追加するが、追加されるのはまだ存在しない要素のみ
             var updateValue: FieldValue
             if postData.isLiked {
                 //すでにいいねしている場合は、いいね削除のためmyidを取り除く更新データを作成
@@ -116,12 +124,19 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
     
     @objc func handleCommentsButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: commentボタンがタップされました")
-        //ログインしていたら
-        if Auth.auth().currentUser != nil {
-            //コメント投稿画面へ遷移
-            let commentViewController = storyboard!.instantiateViewController(withIdentifier: "Comment")
-            present(commentViewController, animated: true, completion: nil)
-        }
+        //タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        //タップされた座標（TableView内の座標）を割り出す
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        //配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        
+        //コメント投稿画面へ遷移
+        let commentViewController = storyboard!.instantiateViewController(withIdentifier: "Comment") as? CommentViewController
+        commentViewController!.postData = postData
+        present(commentViewController!, animated: true, completion: nil)
     }
 
     /*
