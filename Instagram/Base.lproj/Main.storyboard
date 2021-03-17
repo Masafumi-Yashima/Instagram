@@ -314,12 +314,75 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
         </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="BOY-yY-ESE">
+            <objects>
+                <viewController storyboardIdentifier="Comment" id="pdi-tK-A1E" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZGl-nz-8Vz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="コメントを入力" translatesAutoresizingMaskIntoConstraints="NO" id="nKD-XJ-kkC">
+                                <rect key="frame" x="10" y="64" width="394" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="B2Q-c0-aod"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjd-eM-lVl">
+                                <rect key="frame" x="57" y="204" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="5sg-Lz-xUi"/>
+                                </constraints>
+                                <state key="normal" title="コメントを投稿" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleCommentButton:" destination="pdi-tK-A1E" eventType="touchUpInside" id="xXJ-jY-HKX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ry-Sk-sAp">
+                                <rect key="frame" x="57" y="254" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="tgQ-YZ-esW"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleCancelButton:" destination="pdi-tK-A1E" eventType="touchUpInside" id="uce-2r-NIp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WwJ-OF-kWt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nKD-XJ-kkC" firstAttribute="top" secondItem="WwJ-OF-kWt" secondAttribute="top" constant="20" id="CP6-V8-SZo"/>
+                            <constraint firstItem="WwJ-OF-kWt" firstAttribute="trailing" secondItem="nKD-XJ-kkC" secondAttribute="trailing" constant="10" id="NLl-tw-red"/>
+                            <constraint firstItem="nKD-XJ-kkC" firstAttribute="centerX" secondItem="ZGl-nz-8Vz" secondAttribute="centerX" id="Nkm-pC-NuM"/>
+                            <constraint firstItem="Cjd-eM-lVl" firstAttribute="centerX" secondItem="ZGl-nz-8Vz" secondAttribute="centerX" id="R5s-0M-0ct"/>
+                            <constraint firstItem="nKD-XJ-kkC" firstAttribute="leading" secondItem="WwJ-OF-kWt" secondAttribute="leading" constant="10" id="c1L-nY-228"/>
+                            <constraint firstItem="Cjd-eM-lVl" firstAttribute="top" secondItem="nKD-XJ-kkC" secondAttribute="bottom" constant="20" id="nIZ-Zo-pkl"/>
+                            <constraint firstItem="0ry-Sk-sAp" firstAttribute="top" secondItem="Cjd-eM-lVl" secondAttribute="bottom" constant="10" id="v1e-jo-DEE"/>
+                            <constraint firstItem="0ry-Sk-sAp" firstAttribute="centerX" secondItem="ZGl-nz-8Vz" secondAttribute="centerX" id="z8U-OS-Toq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextField" destination="nKD-XJ-kkC" id="D91-30-tf4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dT-HV-3dp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747.82608695652175" y="1465.8482142857142"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn" width="300" height="40"/>
         <image name="camera" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
         <image name="setting" width="25" height="25"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

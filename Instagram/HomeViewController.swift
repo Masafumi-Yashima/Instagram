@@ -30,6 +30,8 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         //hundleEventの第一引数にはタップされたUIButtonのインスタンスが格納され、第二引数にはUIEvent型のタップイベントが格納される
         cell.likeButton.addTarget(self, action: #selector(handleButton(_:forEvent:)), for: .touchUpInside)
         
+        cell.commentsButton.addTarget(self, action: #selector(handleCommentsButton(_:forEvent:)), for: .touchUpInside)
+        
         return cell
     }
     
@@ -112,6 +114,15 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         }
     }
     
+    @objc func handleCommentsButton(_ sender: UIButton, forEvent event: UIEvent) {
+        print("DEBUG_PRINT: commentボタンがタップされました")
+        //ログインしていたら
+        if Auth.auth().currentUser != nil {
+            //コメント投稿画面へ遷移
+            let commentViewController = storyboard!.instantiateViewController(withIdentifier: "Comment")
+            present(commentViewController, animated: true, completion: nil)
+        }
+    }
 
     /*
     // MARK: - Navigation
