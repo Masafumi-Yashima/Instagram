@@ -21,8 +21,17 @@ class CommentViewController: UIViewController {
         //TextViewに枠線をつける
         commentTextField.layer.borderWidth = 1.0
         commentTextField.layer.cornerRadius = 5.0
+        
+        //背景をタップしたらキーボードを閉じる
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tapGesture)
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func dismissKeyboard(){
+            // キーボードを閉じる
+            view.endEditing(true)
     }
     
     @IBAction func handleCommentButton(_ sender: Any) {
