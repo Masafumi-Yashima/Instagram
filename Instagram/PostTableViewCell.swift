@@ -9,7 +9,7 @@ import UIKit
 import FirebaseUI
 import Firebase
 
-class PostTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
@@ -21,12 +21,17 @@ class PostTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        commentTextField.isEditable = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
     }
     
     //PostDataの内容をセルに表示
@@ -63,7 +68,6 @@ class PostTableViewCell: UITableViewCell {
         }
         
         //コメント投稿者名、コメント内容、投稿時間の表示
-        commentTextField.isEditable = false
         commentTextField.text = ""
         for comment in postData.comments {
             let name = comment["name"] as? String

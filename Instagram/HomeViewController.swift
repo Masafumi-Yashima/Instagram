@@ -45,11 +45,6 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "Cell")
         
-        //TableViewの行の高さをAutoLayoutで自動調整する
-//        tableView.rowHeight = UITableView.automaticDimension
-        //TableViewの概算値
-//        tableView.estimatedRowHeight = 200
-        
         // Do any additional setup after loading the view.
     }
     

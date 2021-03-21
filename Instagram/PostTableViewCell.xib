@@ -41,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3X-wC-xBt">
-                        <rect key="frame" x="30" y="425" width="295" height="41"/>
+                        <rect key="frame" x="30" y="425" width="295" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -60,11 +60,11 @@
                         </constraints>
                         <state key="normal" backgroundImage="comment"/>
                     </button>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="agz-ma-HEL">
-                        <rect key="frame" x="30" y="476" width="295" height="120"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="agz-ma-HEL">
+                        <rect key="frame" x="30" y="455.5" width="295" height="150.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="120" id="5uf-jG-evb"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="5uf-jG-evb"/>
                         </constraints>
                         <color key="textColor" systemColor="labelColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -80,7 +80,7 @@
                     <constraint firstItem="d3X-wC-xBt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Cjg-At-VgZ"/>
                     <constraint firstItem="VEl-1Q-Vf6" firstAttribute="top" secondItem="m2I-oG-f64" secondAttribute="bottom" constant="10" id="Egp-sZ-l3v"/>
                     <constraint firstItem="m2I-oG-f64" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Hr3-ov-ug9"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="agz-ma-HEL" secondAttribute="bottom" constant="10" id="MSN-X0-Z1Z"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="agz-ma-HEL" secondAttribute="bottom" id="MSN-X0-Z1Z"/>
                     <constraint firstItem="1KY-xn-Xkp" firstAttribute="centerY" secondItem="VEl-1Q-Vf6" secondAttribute="centerY" id="OWs-bp-d5B"/>
                     <constraint firstItem="agz-ma-HEL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="RT7-FU-0yf"/>
                     <constraint firstItem="1KY-xn-Xkp" firstAttribute="centerY" secondItem="VEl-1Q-Vf6" secondAttribute="centerY" id="Wai-Zq-rA6"/>
