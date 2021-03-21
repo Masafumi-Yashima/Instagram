@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class CommentViewController: UIViewController {
     @IBOutlet weak var commentTextField: UITextView!
@@ -25,24 +26,33 @@ class CommentViewController: UIViewController {
     }
     
     @IBAction func handleCommentButton(_ sender: Any) {
-        print("DEBUG_PRINT: コメントを投稿しました")
-    
-        if Auth.auth().currentUser != nil {
-            var updateValue: FieldValue
-            //コメント者のユーザー名
-            let name = Auth.auth().currentUser?.displayName
-            //コメントのデータを格納する
-            let commentsArray = [
-                "name":name!,
-                "comment":self.commentTextField.text!,
-                "date":Timestamp(date: Date())
-            ] as [String:Any]
-            updateValue = FieldValue.arrayUnion([commentsArray])
-            let postRef = Firestore.firestore().collection(Const.PostPath).document(self.postData.id)
-            postRef.updateData(["comments":updateValue])
-            print("DEBUG_PRINT:新規フィールド")
+        if let commentText = commentTextField.text {
+            //コメントが入力されていない時はHUDを出して何もしない
+            if commentText.isEmpty {
+                SVProgressHUD.showError(withStatus: "コメントを入力してください")
+                return
+            }
+            
+            print("DEBUG_PRINT: コメントを投稿しました")
         
-            self.dismiss(animated: true, completion: nil)
+            if Auth.auth().currentUser != nil {
+                var updateValue: FieldValue
+                //コメント者のユーザー名
+                let name = Auth.auth().currentUser?.displayName
+                //コメントのデータを格納する
+                let commentsArray = [
+                    "name":name!,
+                    "comment":self.commentTextField.text!,
+                    "date":Timestamp(date: Date())
+                ] as [String:Any]
+                updateValue = FieldValue.arrayUnion([commentsArray])
+                let postRef = Firestore.firestore().collection(Const.PostPath).document(self.postData.id)
+                postRef.updateData(["comments":updateValue])
+                //HUDで投稿完了を表示する
+                SVProgressHUD.showSuccess(withStatus: "コメントを投稿しました")
+            
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
