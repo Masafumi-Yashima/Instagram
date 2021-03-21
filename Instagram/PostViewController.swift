@@ -38,11 +38,14 @@ class PostViewController: UIViewController {
                 return
             }
             //FireStoreに投稿データを保存する
+            //ユニークなmyid
+            let myid = Auth.auth().currentUser?.uid
             let name = Auth.auth().currentUser?.displayName
             let postDic = [
+                "myid": myid!,
                 "name": name!,
                 "caption": self.textField.text!,
-                "date": FieldValue.serverTimestamp(),
+                "date": FieldValue.serverTimestamp()
             ] as [String: Any]
             postRef.setData(postDic)
             //HUDで投稿完了を表示する

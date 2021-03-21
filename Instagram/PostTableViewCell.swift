@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseUI
+import Firebase
 
 class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
@@ -30,7 +31,6 @@ class PostTableViewCell: UITableViewCell {
     
     //PostDataの内容をセルに表示
     func setPostData(_ postData: PostData) {
-        commentTextField.text = "こんにちは記入しました"
         //画像の表示
         //インジケーター：グレーのくるくる回るアイコン
         postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
@@ -60,6 +60,23 @@ class PostTableViewCell: UITableViewCell {
         } else {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
+        }
+        
+        //コメント投稿者名、コメント内容、投稿時間の表示
+        commentTextField.isEditable = false
+        commentTextField.text = ""
+        for comment in postData.comments {
+            let name = comment["name"] as? String
+            let commenttext = comment["comment"] as? String
+            let timestamp = comment["date"] as? Timestamp
+            var dateString = ""
+            if let date = timestamp?.dateValue() {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy/MM/dd HH:mm"
+                let String = formatter.string(from: date)
+                dateString = String
+            }
+            commentTextField.insertText("\(name!): \(commenttext!) ... \(dateString)\n")
         }
     }
     

@@ -122,6 +122,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         }
     }
     
+    //コメント投稿ボタンがタップされた時に呼び出されるメソッド
     @objc func handleCommentsButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: commentボタンがタップされました")
         //タップされたセルのインデックスを求める
@@ -132,6 +133,7 @@ class HomeViewController: UIViewController, UITableViewDataSource,UITableViewDel
         
         //配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
+        print(postData.comments)
         
         //コメント投稿画面へ遷移
         let commentViewController = storyboard!.instantiateViewController(withIdentifier: "Comment") as? CommentViewController

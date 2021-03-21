@@ -60,7 +60,7 @@
                         </constraints>
                         <state key="normal" backgroundImage="comment"/>
                     </button>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="TextView" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="agz-ma-HEL">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="agz-ma-HEL">
                         <rect key="frame" x="30" y="476" width="295" height="120"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>

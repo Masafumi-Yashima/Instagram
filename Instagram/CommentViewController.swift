@@ -26,15 +26,22 @@ class CommentViewController: UIViewController {
     
     @IBAction func handleCommentButton(_ sender: Any) {
         print("DEBUG_PRINT: コメントを投稿しました")
-        //commentsを更新する
-        if let myid = Auth.auth().currentUser?.uid {
+    
+        if Auth.auth().currentUser != nil {
             var updateValue: FieldValue
-            let commentText = commentTextField.text!
-            let comments = [myid:commentText] as [String:String]
-            updateValue = FieldValue.arrayUnion([comments])
-            //commentsに更新データを書き込む
-            let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+            //コメント者のユーザー名
+            let name = Auth.auth().currentUser?.displayName
+            //コメントのデータを格納する
+            let commentsArray = [
+                "name":name!,
+                "comment":self.commentTextField.text!,
+                "date":Timestamp(date: Date())
+            ] as [String:Any]
+            updateValue = FieldValue.arrayUnion([commentsArray])
+            let postRef = Firestore.firestore().collection(Const.PostPath).document(self.postData.id)
             postRef.updateData(["comments":updateValue])
+            print("DEBUG_PRINT:新規フィールド")
+        
             self.dismiss(animated: true, completion: nil)
         }
     }
